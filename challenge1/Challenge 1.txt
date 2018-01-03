@@ -1,0 +1,12 @@
+Challenge 1
+
+Fibonacci Number Sequence:
+
+F(0) = 0
+F(1) = 1
+F(N) = F(N-1) + F(N-2)
+
+function fib(n) {
+	//return nth term of the fibonacci sequence
+	//fill in code
+}
