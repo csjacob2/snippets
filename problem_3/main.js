@@ -17,7 +17,7 @@ $(document).ready(function(){
     console.log(`A random value between 0 and ${maxValue}: ${rando}`);
 
     const distRun = 100;
-    var distCount  = calculateDistrubtion(distRun, maxValue);
+    var distCount  = calculateDistribution(distRun, maxValue);
 
     console.log(`The object showing the counts of each random value (run ${distRun}): ` );
     console.log(distCount);
@@ -49,7 +49,7 @@ function flip() {
     return Math.random() >= 0.5;
 }
 
-function calculateDistrubtion(runCount, randoVal) {
+function calculateDistribution(runCount, randoVal) {
     // test the distribution to see if it's reasonable
     var countDistribution = {};
     var rando = 0;
