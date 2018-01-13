@@ -1,5 +1,6 @@
 # Question
-**_Implement your own version of JSON's `stringify` function_**
+**_Implement your own version of JSON's `stringify` function_**  
+[JSON `stringify` documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify)  
 Test conditions:
 - number => 1
 - string => "this is a test line"
