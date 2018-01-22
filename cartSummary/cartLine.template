@@ -1,0 +1,12 @@
+{{#each this}}
+    <li class="cart-item" id="cart_item_{{id}}">
+        <span class="cart-table-item row-number">{{rownumber}}</span>
+        <img class="cart-table-item product-image" src="{{thumbnail}}" />
+        <div class="cart-table-item name">{{name}}</div>
+        <div class="cart-table-item decrement"></div>
+        <div class="cart-table-item quantity">{{quantity}}</div>
+        <div class="cart-table-item increment"></div>
+        <div class="cart-table-item unit-price">${{unit_price}}</div>
+        <div class="cart-table-item unit-total">${{productTotal this}}</div>
+    </li>
+{{/each}}

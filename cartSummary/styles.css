@@ -1,0 +1,138 @@
+#cart-header{
+    width: 764px;
+    height: 39px;
+    line-height: 39px;
+    background: green;
+    color: white;
+    padding-left: 15px;
+    margin-left: 5px;
+    margin-top: 2px;
+    margin-bottom: 1px;
+    font-size: 22px;
+}
+
+#cart-body {
+    margin-left: 5px;
+    position: relative;
+}
+
+#cart-table-header {
+    position: relative;
+    height: 25px;
+    width: 764px;
+    background: #ccc;
+}
+
+.cart-table-header-item {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: gray;
+}
+
+.cart-table-header-item.name {
+     left: 21px;
+}
+.cart-table-header-item.change-qty {
+    left: 422px;
+}
+.cart-table-header-item.unit-price {
+    left: 609px;
+}
+.cart-table-header-item.unit-total{
+    left: 713px;
+}
+
+#cart-table-body {
+    height: 305px;
+    overflow: hidden;
+    position: relative;
+}
+
+#cart-item-wrapper {
+    list-style: none;
+}
+
+.cart-item {
+    position: relative;
+    height: 63px;
+    border-bottom: 1px dotted #ccc;
+    width: 746px;
+}
+
+.cart-table-item {
+    position: absolute;
+    max-height: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 14px;
+    color: gray;
+}
+
+.cart-table-item.row-number {
+    display: none;
+}
+.cart-table-item.product-image{
+    max-height: 80%;
+    max-width: 80%;
+}
+.cart-table-item.name{
+    left: 70px;
+    width: 265px;
+    margin: 0;
+    font-size: 14px;
+    color: gray;
+}
+.cart-table-item.quantity{
+    left: 420px;
+}
+.cart-table-item.decrement,
+.cart-table-item.increment,
+.cart-table-item.remove {
+    width: 46px;
+    height: 46px;
+}
+.cart-table-item.decrement {
+    background: url("images/decrement.png") no-repeat;
+    left: 360px;
+}
+.cart-table-item.increment {
+    background: url("images/increment.png") no-repeat;
+    left: 443px;
+}
+.cart-table-item.disabled{
+    opacity: 0.6;
+}
+.cart-table-item.unit-price{
+    left: 590px;
+}
+.cart-table-item.unit-total{
+    left: 674px;
+}
+
+#cart-summary {
+    position: absolute;
+    top: 10px;
+    left: 815px;
+    width: 217px;
+    height: 108px;
+    padding: 14px 17px 25px 0;
+    border: 1px solid red;
+    line-height: 30px;
+}
+
+#cart-summary ul {
+    list-style: none;
+}
+
+#cart-summary ul li {
+    font-size: 16px;
+}
+
+#cart-summary ul li .amount{
+    float: right;
+}
+#cart-summary ul li .total{
+    font-size: 18px;
+}

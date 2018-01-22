@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+    <title>Your Cart Summary</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="../jquery-3.2.1.min.js"></script>
+    <script src="../handlebars.min.js"></script>
+    <script src="functions.js"></script>
+</head>
+
+<body>
+
+    <div id="cart-header">
+        Shopping Cart
+    </div>
+
+    <div id="cart-body">
+        <div id="cart-table-header">
+            <div class="cart-table-header-item name">Item</div>
+            <div class="cart-table-header-item change-qty">Change Qty</div>
+            <div class="cart-table-header-item unit-price">Unit Price</div>
+            <div class="cart-table-header-item unit-total">Total</div>
+        </div>
+
+        <div id="cart-table-body">
+            <ul id="cart-item-wrapper">
+            </ul>
+        </div>
+    </div>
+
+    <div id="cart-summary">
+        <ul>
+            <li class="subtotal">
+                <span class="text">Subtotal: </span>
+                <span class="amount"></span>
+            </li>
+            <li class="taxes">
+                <span class="text">Taxes: </span>
+                <span class="amount"></span>
+            </li>
+            <li class="total">
+                <span class="text">Total: </span>
+                <span class="amount"></span>
+            </li>
+        </ul>
+    </div>
+
+</body>
+</html>
