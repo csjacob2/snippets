@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+    <title>Web Color Picker</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="../jquery-3.2.1.min.js"></script>
+    <script src="functions.js"></script>
+</head>
+
+<body>
+
+    <div class="slider_container">
+        <div>
+            <input type="range" min="0" max="255" value="0" class="slider" id="color_red"> Value: <span id="text_red" class="text"> </span>
+        </div>
+
+        <div>
+            <input type="range" min="0" max="255" value="0" class="slider" id="color_green"> Value: <span id="text_green" class="text"> </span>
+        </div>
+
+        <div>
+            <input type="range" min="0" max="255" value="0" class="slider" id="color_blue"> Value: <span id="text_blue" class="text"> </span>
+        </div>
+    </div>
+
+    <div class="swatch_container">
+        <span id="swatch_circle"></span>
+        <p>RGB Value: <span id="rgb_text"> </span></p>
+    </div>
+
+</body>
+</html>
