@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+    <script src="../jquery-3.2.1.min.js"></script>
+    <script src="weak_hashing_functions.js"></script>
+    <script src="crypto-js/rollups/sha256.js"></script>
+    <script src="crypto-js/baseConverter.js"></script>
+    <script src="crypto-js/wha.js"></script>
+
+</head>
+<body>
+
+    <p><b>Second Preimage Resistance - Weak Hashing Algorithm</b></p>
+
+    <p><i>The following is the pseudocode for a weak hashing algorithm we're calling WHA. It operates on bytes (block size 8-bits) and outputs a 32-bit hash. Use this hash to explore what can go wrong with a weak cryptographic hash.</i></p>
+
+    <blockquote>
+        <pre>
+            WHA:
+            Input {inStr: a binary string of bytes}
+            Output {outHash: 32-bit hashcode for the inStr in a series of hex values}
+            Mask: 0x3FFFFFFF
+            outHash: 0
+            for byte in input
+                intermediate_value = ((byte XOR 0xCC) Left Shift 24) OR
+                                    ((byte XOR 0x33) Left Shift 16) OR
+                                    ((byte XOR 0xAA) Left Shift 8) OR
+                                    (byte XOR 0x55)
+                outHash =(outHash AND Mask) + (intermediate_value AND Mask)
+            return outHash
+        </pre>
+    </blockquote>
+
+    <p><i>You're supplied another Jeopardy clue assigned to spr_input_string. Your goal is to find another string that produces the same WHA output as this Jeopardy clue. In other words, demonstrate that this hash is not second preimage resistant. Find a string with the same WHA output as spr_input_string.</i></p>
+
+    <div class="main"></div>
+
+</body>
+</html>
