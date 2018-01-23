@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+    <script src="../jquery-3.2.1.min.js"></script>
+    <script src="decrypt_aes_functions.js"></script>
+    <script src="crypto-js/rollups/aes.js"></script>
+    <script src="crypto-js/components/aes-min.js"></script>
+
+</head>
+<body>
+
+    <p><b>Decrypting AES</b></p>
+
+    <p><i>aes_key.hex contains a 256-bit AES key represented as a series of hexadecimal values. aes_iv.hex contains a 128-bit Initialization Vector in a similar representation. We encrypted a Jeopardy clue using AES in CBC mode with this key and IV and wrote the resulting ciphertext (also stored in hexadecimal) in aes_ciphertext.hex.</i></p>
+
+    <p><i>Decrypt the ciphertext.</i></p>
+
+    <p><i>Note: the decryption is cut off as the assigned ciphertext was actually cut off as well (unintentionally).</i></p>
+
+    <div class="decrypt"></div>
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+    <script src="../jquery-3.2.1.min.js"></script>
+    <script src="breaking_aes_functions.js"></script>
+    <script src="crypto-js/rollups/aes.js"></script>
+    <script src="crypto-js/components/aes-min.js"></script>
+
+</head>
+<body>
+
+    <p><b>Breaking A Weak AES Key</b></p>
+
+    <p><i>We encrypted a Jeopardy clue using 256-bit AES in CBC and stored the result in hexadecimal in the file aes_weak_ciphertext.hex. We haven't supplied the key. All we'll tell you about the key is that it is 256 bits long and its 251 most significant (leftmost) bits are all 0's. The initialization vector was set to all 0s. Find the plaintext.</i></p>
+
+    <p><i>Note: the decryption is cut off as the assigned ciphertext was actually cut off as well (unintentionally).</i></p>
+
+    <div class="decrypt"></div>
+
+</body>
+</html>
