@@ -51,6 +51,13 @@ function bruteCombo(hp) {
 
         // build map of combo passwords first
         // combo password table is 10,000 x 10,000 words
+
+        // idea: instead of building entire 10kx10k rainbow list, can we build it in small chunks, say 500x10k lists
+        // search each list as it's built, if hash isn't found, dump list (Map), build new list in it
+        // if hash is found, push result to foundArray
+        // this way, you aren't building a Map structure of millions of entries first and can search/find results early
+        // just have to make sure to track each iteration and make sure we do each chunk and not miss anything
+
         for (let i = 0; i < badPwdListLength; i++) {
             for (let j = 0; j < badPwdListLength; j++) {
                 newPWD = '' + badPasswordsList[i] + badPasswordsList[j];
