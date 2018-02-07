@@ -46,7 +46,8 @@ span {
     border-radius: 50%;
     display: block;
     left: 50%;
-    transform: translateX(100%)
+    transform: translateX(100%);
+    background: #000000;
 }
 
 p {
