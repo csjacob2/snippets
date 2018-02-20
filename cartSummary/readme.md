@@ -11,3 +11,5 @@ In the summary box, the Subtotal, Taxes and Total are also updated in real time 
 **Functions used:** A Handlebars helper was written to calculate the Product Total Price for the Handlebars template. Click handlers are added to each line after the products are added by locating each class and attaching them individually, and locating the closest parent ID for each product to find the quantity and prices.
 
 **Weaknesses:** Doing currency manipulation / replacing currency symbols on the front end is bad practice and should not be done in actual practice, but this is done primarily for data manipulation and demonstration purposes.
+
+**Update #1:** Rewrote css styles into LESS. Still want to rewrite this old clunky cobbled together CSS into responsive. This was thrown together primarily for the JS and handlebars testing but would be a good test for RWD.
