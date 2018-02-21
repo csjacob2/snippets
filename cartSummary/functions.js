@@ -5,7 +5,7 @@ $(document).ready(function() {
     function initialize(){
         //load the cart with items from json file
 
-        $.get('cart.json', function(data){
+        $.getJSON('cart.json', function(data){
             $.get('cartLine.template', function(source) {
                 var template = Handlebars.compile(source);
                 var cartSummary = template(data.items);
@@ -33,7 +33,7 @@ $(document).ready(function() {
         })
     }
 
-    function click_increment(event){
+    function click_increment(){
         // increment quantity, product total
 
         var thisID = '#'+$(this).closest('li').prop('id');
@@ -47,7 +47,7 @@ $(document).ready(function() {
         updateSummary();
     }
 
-    function click_decrement(event){
+    function click_decrement(){
         // decrement quantity, product total
 
         var thisID = '#'+$(this).closest('li').prop('id');
@@ -70,7 +70,7 @@ $(document).ready(function() {
     function updateSummary() {
         // update summary box
 
-        $.get('cart.json', function(data) {
+        $.getJSON('cart.json', function(data) {
             var salesTax = data.sales_tax;
             var taxes;
             var subtotal = 0;
