@@ -76,6 +76,24 @@ class circularLinkedList {
         }
     }
 
+    traverse(n, index) {
+        //traverse the LL for a count value, return the node at that count
+        // n is the number of nodes to traverse through
+        // index = start at last node where left off
+        var node = index;
+        var count = 0;
+
+        while (count != n) {
+            if (node.next == null) {
+                return null
+            }
+            node = node.next;
+            count++;
+        }
+        return node;
+    }
+
+
     deleteNode(value) {
         var node = this.head;
         var prevNode, afterNode; //node to track before deleted node
