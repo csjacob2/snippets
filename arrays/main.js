@@ -16,6 +16,12 @@ $(document).ready(function(){
     console.log(`Original array: ${originalArray}`);
     console.log(`Reversed new array: ${newArray}`);
     console.log(`Reversed inline array: ${reverseSameArray(originalArray)}`);
+
+
+    let sortedArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    console.log(`Before shuffle:`, sortedArray);
+    shuffle(sortedArray);
+    console.log(`After shuffle:`, sortedArray);
 });
 
 function reverseArray(array) {
@@ -40,4 +46,19 @@ function reverseSameArray(array) {
         array[j] = tempvar;
     }
     return array;
+}
+
+
+const getRandom = (floor, ceiling) => Math.floor(Math.random() * (ceiling - floor + 1)) + floor;
+
+function shuffle(array) {
+
+    var randomValue, tempValue;
+
+    for (var index = 0; index < array.length; index++) {
+        randomValue = getRandom(index, array.length - 1);
+        tempValue = array[index];
+        array[index] = array[randomValue];
+        array[randomValue] = tempValue;
+    }
 }
