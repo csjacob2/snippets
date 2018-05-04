@@ -12,7 +12,7 @@ module.exports = function(grunt) {
         },
         watch: {
             files: ['**/*.less'], // which files to watch
-            tasks: ['less'],
+            tasks: ['less']
         }
     });
     grunt.loadNpmTasks('grunt-contrib-less');
