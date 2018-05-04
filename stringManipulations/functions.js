@@ -1,5 +1,7 @@
 $(document).ready(function() {
     console.log(stringReverse('reverse this string'));
+
+    console.log(findAllAnagrams('plates'));
 });
 
 
@@ -100,4 +102,35 @@ function testReduceAvg2() {
         return total;
     }, []);
     return average;
+}
+
+
+// given a word, find any anagrams of that word from an array and return the results
+// plates -> pleats, staple, pastel, ...
+var ALL_WORDS = ['car', 'pleats', 'arc', 'pastel', 'color', 'picture', 'curtains', 'staple'];
+
+// main function
+function findAllAnagrams(word) {
+    var foundAnagrams = [];
+
+    ALL_WORDS.forEach(function(element) {
+
+        if (isAnagram(element, word)) {
+            foundAnagrams.push(element);
+        }
+    });
+    return foundAnagrams;
+}
+
+//test function to compare two words
+function isAnagram(word, otherWord) {
+    return (sortedLetters(word) === sortedLetters(otherWord));
+}
+
+// helper function to sort letters
+// this makes both words (potentially) equal to each other
+function sortedLetters(word) {
+    word = word.split('');
+    word = word.sort();
+    return word.join('');
 }
