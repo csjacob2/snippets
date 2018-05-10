@@ -1,7 +1,9 @@
 $(document).ready(function() {
     console.log(stringReverse('reverse this string'));
-
     console.log(findAllAnagrams('plates'));
+    fizzbuzz();
+
+    console.log(add(10)(20));
 });
 
 
@@ -105,6 +107,33 @@ function testReduceAvg2() {
 }
 
 
+// demonstrate a closure to add two values;
+function add(a) {
+    return function (b) {
+        return a + b;
+    }
+}
+
+
+function fizzbuzz() {
+    var output;
+
+    for (let i = 1; i <= 100; i++) {
+        output = '';
+
+        if (i % 3 == 0) {
+            output += 'Fizz';
+        }
+
+        if (i % 5 == 0) {
+            output += 'Buzz';
+        }
+
+        console.log(output || i);
+    }
+}
+
+
 // given a word, find any anagrams of that word from an array and return the results
 // plates -> pleats, staple, pastel, ...
 var ALL_WORDS = ['car', 'pleats', 'arc', 'pastel', 'color', 'picture', 'curtains', 'staple'];
@@ -134,3 +163,5 @@ function sortedLetters(word) {
     word = word.sort();
     return word.join('');
 }
+
+
