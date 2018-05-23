@@ -29,8 +29,8 @@ $(document).ready(function(){
 
 function reverseArray(array) {
     // reverse into a new array
-    var rArray = [];
-    var arrayLength = array.length-1;
+    let rArray = [];
+    const arrayLength = array.length-1;
 
     for (let i = arrayLength; i >= 0; i--) {
         rArray.push(array[i]);
