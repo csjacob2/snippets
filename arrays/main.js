@@ -1,6 +1,6 @@
 $(document).ready(function(){
     const originalArray = [ 1, 2, 3, 4, 5, 6 ];
-    var newArray = reverseArray(originalArray);
+    let newArray = reverseArray(originalArray);
 
     console.log(`Original array: ${originalArray}`);
     console.log(`Reversed new array: ${newArray}`);
@@ -41,12 +41,10 @@ function reverseArray(array) {
 
 function reverseSameArray(array) {
     // reverse within the same array
-    var tempvar, arrayLength = array.length-1;
+    const arrayLength = array.length-1;
 
     for (let i = 0, j = arrayLength; i <= arrayLength, i <= j; i++, j--) {
-        tempvar = array[i];
-        array[i] = array[j];
-        array[j] = tempvar;
+        [array[i], array[j]] = [array[j], array[i]];
     }
     return array;
 }
@@ -56,13 +54,11 @@ const getRandom = (floor, ceiling) => Math.floor(Math.random() * (ceiling - floo
 
 function shuffle(array) {
 
-    var randomValue, tempValue;
+    let randomValue;
 
-    for (var index = 0; index < array.length; index++) {
+    for (let index = 0; index < array.length; index++) {
         randomValue = getRandom(index, array.length - 1);
-        tempValue = array[index];
-        array[index] = array[randomValue];
-        array[randomValue] = tempValue;
+        [array[index], array[randomValue]] = [array[randomValue], array[index]]
     }
 }
 
@@ -72,7 +68,7 @@ function expandRandom() {
 
     // this is building an array of the values from 0-7 (with two null values of -1) in a 2D grid of 6x6 values (representing 0-5 slots) and essentially randomizes choosing one value from anywhere in the grid (discarding and rechoosing if one of the null values is picked)
 
-    var arraySeven = [
+    const arraySeven = [
         [0, 1, 2, 3, 4, 5],
         [6, 7, 0, 1, 2, 3],
         [3, 4, 5, 6, 7, 0],
@@ -81,7 +77,7 @@ function expandRandom() {
         [4, 5, 6, 7, -1, -1]
     ];
 
-    var answer = -1, i, j;
+    let answer = -1, i, j;
 
     while (answer == -1) {
         //generate a random number between 0-5 for i and j

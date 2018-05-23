@@ -1,9 +1,9 @@
 $(document).ready(function() {
     console.log(stringReverse('reverse this string'));
     console.log(findAllAnagrams('plates'));
-    fizzbuzz();
 
     console.log(add(10)(20));
+    console.log(sum(1, 3, 5, 6, 7));
 });
 
 
@@ -14,13 +14,18 @@ function isPalindrome(string) {
     return (string == string.split('').reverse().join(''));
 }
 
+const isPalindromeES6 = (string) => {
+    string.replace(/\W/g, '').toLowerCase();
+    return (string == string.split('').reverse().join(''));
+}
+
 
 function firstUnique(string) {
     //find the first occurring unique letter in a string of characters
 
-    var searchChar;
+    let searchChar;
 
-    for (var i = 0; i < string.length; i++) {
+    for (let i = 0; i < string.length; i++) {
         searchChar = string.charAt(i);
 
         // look for any incidents of the searchChar in the string *after* the first occurrence
@@ -38,11 +43,11 @@ function stringReverse(string) {
     // but do not reverse the string itself
     // 'reverse this string' == 'esrever siht gnirts'
 
-    var temp = [];
-    var finalString = [];
+    let temp = [];
+    let finalString = [];
 
-    var arrayString = string.split(' ');
-    for (var i = 0; i < arrayString.length; i++) {
+    let arrayString = string.split(' ');
+    for (let i = 0; i < arrayString.length; i++) {
         temp = arrayString[i].split('').reverse().join('');
         finalString.push(temp);
     }
@@ -53,10 +58,10 @@ function stringReverse(string) {
 function duplicates(string) {
     //find the duplicate letters in a string
 
-    var charCount = {};
-    var arrayString = string.split('');
+    let charCount = {};
+    const arrayString = string.split('');
 
-    arrayString.forEach(function(element){
+    for (let element of arrayString) {
         element = element.toLowerCase();
 
         if (element != ' ') {
@@ -66,9 +71,9 @@ function duplicates(string) {
                 charCount[element] = 1;
             }
         }
-    });
+    }
 
-    for (var key in charCount) {
+    for (let key in charCount) {
         if (charCount[key] == 1) {
             delete charCount[key];
         }
@@ -81,9 +86,9 @@ function duplicates(string) {
 function testReduceAvg() {
     // using reduce function, calculate the average of an array
 
-    var array = [123, 1235, 231, 5473, 1200];
+    const array = [123, 1235, 231, 5473, 1200];
 
-    var average = array.reduce((total, amount, index, array) => {
+    const average = array.reduce((total, amount, index, array) => {
         total += amount;
         if (index === array.length-1)
             return total/array.length;  // this happens when the reduce loop hits the end (index == array.length-1) so we need to calculate average
@@ -97,14 +102,30 @@ function testReduceAvg2() {
     // using reduce function, calculate the average of an array in a different method
     // this uses the optional value of an empty array passed as the initial value
 
-    var array = [123, 1235, 231, 5473, 1200];
+    const array = [123, 1235, 231, 5473, 1200];
 
-    var average = array.reduce((total, amount) => {
+    const average = array.reduce((total, amount) => {
         total.push(amount * 2);
         return total;
     }, []);
     return average;
 }
+
+function sumReduce() {
+    //using reduce function and fat arrow, calculate the sum of an array
+
+    const array = [123, 1235, 231, 5473, 1200];
+    const sum = array.reduce((subtotal, val) => subtotal + val, 0);
+    return sum;
+}
+
+function sum(...n) {
+    //using reduce function and fat arrow, calculate the sum of an unknown value of args
+
+    const total = n.reduce((subtotal, val) => subtotal + val, 0);
+    return total;
+}
+
 
 
 // demonstrate a closure to add two values;
@@ -116,7 +137,7 @@ function add(a) {
 
 
 function fizzbuzz() {
-    var output;
+    let output;
 
     for (let i = 1; i <= 100; i++) {
         output = '';
@@ -136,18 +157,17 @@ function fizzbuzz() {
 
 // given a word, find any anagrams of that word from an array and return the results
 // plates -> pleats, staple, pastel, ...
-var ALL_WORDS = ['car', 'pleats', 'arc', 'pastel', 'color', 'picture', 'curtains', 'staple'];
+const ALL_WORDS = ['car', 'pleats', 'arc', 'pastel', 'color', 'picture', 'curtains', 'staple'];
 
 // main function
 function findAllAnagrams(word) {
-    var foundAnagrams = [];
+    let foundAnagrams = [];
 
-    ALL_WORDS.forEach(function(element) {
-
+    for (let element of ALL_WORDS) {
         if (isAnagram(element, word)) {
             foundAnagrams.push(element);
         }
-    });
+    }
     return foundAnagrams;
 }
 
@@ -159,9 +179,5 @@ function isAnagram(word, otherWord) {
 // helper function to sort letters
 // this makes both words (potentially) equal to each other
 function sortedLetters(word) {
-    word = word.split('');
-    word = word.sort();
-    return word.join('');
+    return word.split('').sort().join('');
 }
-
-

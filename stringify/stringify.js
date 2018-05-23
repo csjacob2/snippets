@@ -14,7 +14,7 @@ $(document).ready(function(){
 });
 
 function stringify(data) {
-    var newData = '';
+    let newData = '';
 
     if (Array.isArray(data)) {
         let newArray = [];
@@ -29,7 +29,7 @@ function stringify(data) {
         newData = `"${data}"`;
     } else if (Object.prototype.toString.call(data)) {
         let newArray = [];
-        var tempVar = '';
+        let tempVar = '';
 
         for (let key in data) {
             tempVar = (stringify(data[key]));
